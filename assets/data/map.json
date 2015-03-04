@@ -1,0 +1,444 @@
+callback({
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.8,
+          42.3
+        ]
+      },
+      "properties": {
+        "id": "cover",
+        "zoom": 3,
+        "title": "Katrina Engelsted",
+        "info": " With a background in <strong>geography</strong> and <strong>Asian studies</strong>, Katrina enjoys creating maps, collecting data, and spreading geographical knowledge. Currently, she works with the <strong>National Park Service</strong> to design and create interactive web maps.  From navigating with topographic maps in the mountains of Colorado to analyzing oil palm plantation imagery around Southeast Asia to teaching the Indonesian provincial government how to collect spatial data, Katrina has worked on a range of geospatial projects. Katrina aims to make the world more geographically and map literate. She lives for making the world a <strong>mappier</strong> place.",
+        "type": "work"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.99259,
+          39.73351
+        ]
+      },
+      "properties": {
+        "id": "nps",
+        "zoom": 6,
+        "title": "Web Developer @NPMap: National Park Service (March 2014 to present)",
+        "info": "Katrina works with the NPMap team to develop and design engaging maps for the National Park Service.  Her job entails working with the OpenStreetMap community to get more people excited about mapping the parks.  The team focuses on building platforms to allow NPS employees to sync with GIS Server and other various mapping platforms. Check out some of the work at <a href='http://www.nps.gov/npmap/'>www.nps.gov</a>.",
+        "type": "work"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.543968,
+          42.827
+        ]
+      },
+      "properties": {
+        "id": "colgate",
+        "zoom": 4,
+        "title": "Outdoor Educator @Colgate University (Sept 2007 - May 2011)",
+        "info": "Taught peers, teachers and community members in the community various outdoor skills, such as survival, kayaking, camping, skiing, rock climbing, etc.  Learned how to conduct proper lessons and teach in different styles in order to appeal to a variety of learning types.",
+        "type": "work"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.031959,
+          38.890369
+        ]
+      },
+      "properties": {
+        "id": "bonobo",
+        "zoom": 4,
+        "title": "GIS Coordinator @Bonobo Conservation Initiative (Nov 2011 - Feb 2012)",
+        "info": " â€£ Gathered and compiled research data from biodiversity and forest survey\n â€£ Created interactive online map using Javascript, CartoCSS, and HTML (http://www.bonobo.org/peace-forest-map/)\n â€£ Organized past folders and datasets so that work flow was quicker and more efficient\n BCI is a NGO that aims to protect the bonobos, preserve their tropical rainforest habitat and empower local communities in the Congo Basin.",
+        "type": "work"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.99259,
+          39.73351
+        ]
+      },
+      "properties": {
+        "id": "gschool",
+        "zoom": 6,
+        "title": "Student @gschool (Sept 2013 to Feb 2014)",
+        "info": "An intensive six-month web development program that covered the ins-and-outs of Ruby on Rails and Javascript coding. With Jeff Casimir, Katrina Owen, Franklin Webber, and Jorge as instructors, Katrina worked with twenty-four other students on various projects to hone in their team work and programming skills.  Projects ranged in focus from\nâ€£ Deploying sites using Sinatra and Rails\nâ€£ Test Driven Development (RSPEC, MiniTest, Capybara)\nâ€£ API integration\nKatrina worked on group projects, as well as individual ones, which can all be found at <a href='http://github.com/MappingKat' target='_blank'>www.github.com/MappingKat</a>",
+        "type": "work"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.827522,
+          -6.47149
+        ]
+      },
+      "properties": {
+        "id": "earthline",
+        "zoom": 4,
+        "title": "Production Manager @Earthline (Jan 2013 to Sept 2013)",
+        "info": "Worked as a manager for the imagery, mapping, surveying and printshop departments (over 30 staff) and around ten projects at a time.\nâ€£ Wrote 30 page project reports so that customers could understand satellite imagery acquisition, mapping processes, and classification schemes for their estates\nâ€£ Coordinated with customers when problems arose or clarification was needed\nâ€£ Worked with VTiger to organize leads, customers and sale\nâ€£ Hired mapping managers, supervisors and editors; remote sensing operators; surveyors Constructed excel project database with basic macros to overview and track projects more effectively. PT Earthline is an Indonesian mapping company that works with various clients, such as WWF, ExxonMobil, Chevron, Wilmar, Genting Holdings, etc, to map oil palm plantations, mining concessions and green fields in Indonesia, Malaysia, and parts of Africa.",
+        "type": "work"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.827522,
+          -6.17149
+        ]
+      },
+      "properties": {
+        "id": "hot",
+        "zoom": 4,
+        "title": "Technical Writer @Humanitarian OpenStreetMap Team (July to December 2013)",
+        "info": "Various parts of Indonesia\nâ€£ Edited and created chapters for OpenStreetMap learning and teaching tutorials (www.learnosm.org\nâ€£ Used Google Drive, Github and Jekyll/Hyde to share and edit chapter\nâ€£ Edited and wrote workshops and project updates on www.openstreetmap.or.i\nâ€£ Attended workshops throughout Indonesia to teach OSM tools, such as PostGIS, PostgreSQL, and QGIS pluginsHumanitarian OpenStreetMap Team is an NGO set up to collect, map and teach OSM tools. This Indonesia project was funded by AusAID, World Bank, IOM and the Indonesian government to map critical infrastructure and create better contingency plans using the InaSafe plugin.",
+        "type": "work"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.803894,
+          11.112666
+        ]
+      },
+      "properties": {
+        "id": "allhands",
+        "zoom": 4,
+        "title": " Base Manager @All Hands (June 2011 to Feb 2012)",
+        "info": "Katrina volunteered on the Leogane, Haiti and Cagayan de Oro, Mindanao, Philippines projects. â€£ She managed 30+ volunteers at base and at work site\n â€£ Organized travel,transportation, accommodation, food and work schedule for over 40 volunteers\n â€£ Represented All Hands at conferences on disaster response, prevention and management\n â€£ Prepared excel charts and edited Google Earth maps/ KMLfiles layers for the water sanitation, rubble and demolition sites\n â€£ Built schools, demolished unsafe structures, and cleared house foundations that had been damaged by the 2010 earthquake All Hands is a disaster response organization that sends volunteers from all over the world to aid victims after natural disasters.",
+        "type": "work"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "india",
+        "type": "travel",
+        "title": "Study Abroad"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.2119140625,
+          28.729130483430154
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "india"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.8046875,
+          11.888853082975983
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "india"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.06884765624999,
+          30.48181700282728
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "india"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.95898437499999,
+          27.235094607795503
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "india"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.728759765625,
+          27.00040800352175
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "india"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.056640625,
+          25.3241665257384
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "kenya"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.826171875,
+          -1.2743089918452233
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "tanzania"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          39.30908203125,
+          -6.795535025719518
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "haiti"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.015625,
+          18.396230138028827
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "argentina"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.35937499999999,
+          -34.81380331711314
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "brazil"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.427734375,
+          -27.664068965384516
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          153.10546875,
+          -27.059125784374054
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          146.77734375,
+          -19.72534224805787
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.259765625,
+          -33.50475906922606
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          144.580078125,
+          -38.06539235133248
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.25195312499997,
+          -34.59704151614416
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.517578125,
+          -12.554563528593656
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          123.134765625,
+          -17.30868788677001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          113.02734374999999,
+          -7.36246686553575
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          102.65625,
+          -2.811371193331128
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          98.87695312499999,
+          3.425691524418075
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.16943359374999,
+          5.943899579425599
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.66748046874999,
+          3.118576216781991
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "mala"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.99658203125,
+          1.1205340322500545
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "denver"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.435546875,
+          39.707186656826565
+        ]
+      }
+    }
+  ]
+})
