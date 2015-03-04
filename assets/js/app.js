@@ -38,7 +38,7 @@ App = {
           App.createLayer(id);
         },
         type: 'jsonp',
-        url: 'https://raw.githubusercontent.com/MappingKat/mappingkat/assets/data/map.json?callback=callback'
+        url: 'https://raw.githubusercontent.com/MappingKat/mappingkat/gh-pages/assets/data/map.json?callback=callback'
       });
     }
   }
