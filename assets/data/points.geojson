@@ -1,0 +1,18 @@
+var places = { type: "FeatureCollection", features: [
+  { "geometry": { "type": "Point", "coordinates": [-71.8000, 42.3000] },
+      "properties": { "id": "cover", "zoom": 3 }, type: "Feature" },
+    { "geometry": { "type": "Point", "coordinates": [ -104.99259, 39.73351 ] },
+      "properties": { "id": "nps", "zoom": 6 }, type: "Feature" },
+    { "geometry": { "type": "Point", "coordinates": [ -104.99259, 39.73351 ] },
+      "properties": { "id": "gschool", "zoom": 6 }, type: "Feature" },
+    { "geometry": { "type": "Point", "coordinates": [ 106.8275223, -6.4714902 ] },
+      "properties": { "id": "earthline" }, type: "Feature" },
+    { "geometry": { "type": "Point", "coordinates": [ 106.8275223, -6.1714902] },
+      "properties": { "id": "hot", "zoom": 4 }, type: "Feature" },
+    { "geometry": { "type": "Point", "coordinates": [ 121.803894, 11.1126661] },
+      "properties": { "id": "allhands" }, type: "Feature" },
+    { "geometry": { "type": "Point", "coordinates": [-77.0319595 , 38.8903694 ] },
+       "properties": { "id": "bonobo" }, type: "Feature" },
+    { "geometry": { "type": "Point", "coordinates": [-75.5439682, 42.8269997 ] },
+      "properties": { "id": "colgate" } 
+]};

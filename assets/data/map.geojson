@@ -1,4 +1,4 @@
-callback({
+{
   "type": "FeatureCollection",
   "features": [
     {
@@ -441,4 +441,3 @@ callback({
       }
     }
   ]
-})
