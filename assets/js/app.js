@@ -1,67 +1,65 @@
 var NPMap,
   App = {
-    changeNarration: function (){
-      debugger;
-      var places = { type: 'FeatureCollection', features: [
-        { 'geometry': { 'type': 'Point', 'coordinates': [-71.8000, 42.3000] },
-          'properties': { 'id': 'cover', 'zoom': 3 }, type: 'Feature' },
-        { 'geometry': { 'type': 'Point', 'coordinates': [ -104.99259, 39.73351 ] },
-          'properties': { 'id': 'nps', 'zoom': 6 }, type: 'Feature' },
-        { 'geometry': { 'type': 'Point', 'coordinates': [ -104.99259, 39.73351 ] },
-          'properties': { 'id': 'gschool', 'zoom': 6 }, type: 'Feature' },
-        { 'geometry': { 'type': 'Point', 'coordinates': [ 106.8275223, -6.4714902 ] },
-          'properties': { 'id': 'earthline' }, type: 'Feature' },
-        { 'geometry': { 'type': 'Point', 'coordinates': [ 106.8275223, -6.1714902] },
-          'properties': { 'id': 'hot', 'zoom': 4 }, type: 'Feature' },
-        { 'geometry': { 'type': 'Point', 'coordinates': [ 121.803894, 11.1126661] },
-          'properties': { 'id': 'allhands' }, type: 'Feature' },
-        { 'geometry': { 'type': 'Point', 'coordinates': [-77.0319595 , 38.8903694 ] },
-           'properties': { 'id': 'bonobo' }, type: 'Feature' },
-        { 'geometry': { 'type': 'Point', 'coordinates': [-75.5439682, 42.8269997 ] },
-          'properties': { 'id': 'colgate' }, type: 'Feature' }
-      ]};
-
-      var narrative = document.getElementById('narrative'),
-        sections = narrative.getElementsByTagName('section'),
-        currentId = '';
-
-      function setId (newId) {
-        if (newId === currentId) return;
-        for (var i = 0; i < places.length; i++){
-          if (places.feature.properties.id === newId) {
-            map.setView(layer.getLatLng(), layer.feature.properties.zoom || 14);
-          //   layer.setIcon(L.mapbox.marker.icon({
-          //     'marker-color': '#a8f'
-          //   }));
-          // } else {
-          //   layer.setIcon(L.mapbox.marker.icon({
-          //     'marker-color': '#404040'
-          //   }));
-          }
-        }
-
-        for (var i = 0; i < sections.length; i++) {
-          sections[i].className = sections[i].id === newId ? 'active' : '';
-        }
-        currentId = newId;
-      }
-
-      setId('cover');
-
-      narrative.onscroll = function (e) {
-        var narrativeHeight = narrative.offsetHeight;
-        var newId = currentId;
-        for (var i = sections.length - 1; i >= 0; i--) {
-          var rect = sections[i].getBoundingClientRect();
-          if (rect.top >= 0 && rect.top <= narrativeHeight) {
-            newId = sections[i].id;
-          }
-        }
-        setId(newId);
-      };
-    },
-    current: null,
+    // current: null,
+    currentId: '',
     data: {},
+    places: { type: 'FeatureCollection', features: [
+      {'geometry': {'type': 'Point', 'coordinates': [-71.8000, 42.3000] },
+        'properties': { 'id': 'cover', 'zoom': 3 }, type: 'Feature' },
+      {'geometry': {'type': 'Point', 'coordinates': [ -104.99259, 39.73351 ] },
+        'properties': { 'id': 'nps', 'zoom': 6 }, type: 'Feature' },
+      {'geometry': {'type': 'Point', 'coordinates': [ -104.99259, 39.73351 ] },
+        'properties': { 'id': 'gschool', 'zoom': 6 }, type: 'Feature' },
+      {'geometry': {'type': 'Point', 'coordinates': [ 106.8275223, -6.4714902 ] },
+        'properties': { 'id': 'earthline' }, type: 'Feature' },
+      {'geometry': {'type': 'Point', 'coordinates': [ 106.8275223, -6.1714902] },
+        'properties': { 'id': 'hot', 'zoom': 4 }, type: 'Feature' },
+      {'geometry': {'type': 'Point', 'coordinates': [ 121.803894, 11.1126661] },
+        'properties': { 'id': 'allhands' }, type: 'Feature' },
+      {'geometry': {'type': 'Point', 'coordinates': [-77.0319595 , 38.8903694 ] },
+         'properties': { 'id': 'bonobo' }, type: 'Feature' },
+      {'geometry': {'type': 'Point', 'coordinates': [-75.5439682, 42.8269997 ] },
+        'properties': { 'id': 'colgate' }, type: 'Feature' }
+    ]},
+    setId: function (newId) {
+      var narrative = document.getElementById('narrative'),
+      sections = narrative.getElementsByTagName('section'),
+      places = this.places;
+
+      if (newId === App.currentId) return;
+      for (var i = 0; i < places.length; i++){
+        if (App.places.feature.properties.id === newId) {
+          map.setView(layer.getLatLng(), layer.feature.properties.zoom || 14);
+        //  TODO:  change color of heat map when scroll to... 
+        //  layer.setIcon(L.mapbox.marker.icon({
+        //     'marker-color': '#a8f'
+        //   }));
+        // } else {
+        //   layer.setIcon(L.mapbox.marker.icon({
+        //     'marker-color': '#404040'
+        //   }));
+        }
+      }
+      for (var i = 0; i < sections.length; i++) {
+        sections[i].className = sections[i].id === newId ? 'active' : '';
+      }
+      currentId = newId;
+    },
+    narrative: function () {
+      var newId = App.currentId,
+      narrative = document.getElementById('narrative'),
+      narrativeHeight = narrative.offsetHeight,
+      sections = narrative.getElementsByTagName('section');
+
+      for (var i = sections.length - 1; i >= 0; i--) {
+        var rect = sections[i].getBoundingClientRect();
+        if (rect.top >= 0 && rect.top <= narrativeHeight) {
+          newId = sections[i].id;
+        }
+      }
+      debugger;
+      App.setId(newId);
+    },
     createLayer: function(id) {
       App.current = L.heatLayer(App.data[id], {
         radius: 50
@@ -111,9 +109,6 @@ NPMap = {
     position: 'topright'
   },
   hooks: {
-    onAdd: function(callback){
-
-    },
     init: function(callback) {
       var RadioControl = L.Control.extend({
         options: {
@@ -195,15 +190,18 @@ NPMap = {
 
         new RadioControl().addTo(NPMap.config.L);
         App.to('work');
-
-        map.onscroll = function (e){
-          App.changeNarration();
-        }
+        
+        
         callback();
       },
       preinit: function(callback) {
         var overlay = L.npmap.preset.baselayers.mapbox.pencil;
         NPMap.config.overlays = [ overlay ];
+        callback();
+      },
+      onAdd: function(callback){
+
+        debugger;
         callback();
       }
     },
