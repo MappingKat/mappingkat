@@ -1,7 +1,7 @@
 var NPMap,
   App = {
     // current: null,
-    currentId: '',
+    currentId: 'cover',
     data: {},
     places: { type: 'FeatureCollection', features: [
       {'geometry': {'type': 'Point', 'coordinates': [-71.8000, 42.3000] },
@@ -24,12 +24,13 @@ var NPMap,
     setId: function (newId) {
       var narrative = document.getElementById('narrative'),
       sections = narrative.getElementsByTagName('section'),
-      places = this.places;
+      places = App.places;
 
       if (newId === App.currentId) return;
       for (var i = 0; i < places.length; i++){
         if (App.places.feature.properties.id === newId) {
-          map.setView(layer.getLatLng(), layer.feature.properties.zoom || 14);
+          NPMap.config.L.fitBounds(new L.LatLngBounds(layer.getLatLng()));
+          // map.setView(layer.getLatLng(), layer.feature.properties.zoom || 14);
         //  TODO:  change color of heat map when scroll to... 
         //  layer.setIcon(L.mapbox.marker.icon({
         //     'marker-color': '#a8f'
@@ -44,6 +45,7 @@ var NPMap,
         sections[i].className = sections[i].id === newId ? 'active' : '';
       }
       currentId = newId;
+      // debugger;
     },
     narrative: function () {
       var newId = App.currentId,
@@ -64,7 +66,6 @@ var NPMap,
       App.current = L.heatLayer(App.data[id], {
         radius: 50
       }).addTo(NPMap.config.L);
-      // NPMap.config.L.fitBounds(new L.LatLngBounds(App.data[id]));
     },
     to: function(id) {
       if (App.current) {
@@ -191,17 +192,24 @@ NPMap = {
         new RadioControl().addTo(NPMap.config.L);
         App.to('work');
         
+        $(document).ready(function(){
+          $('#map').bind('mousewheel', function(e){
+            if (e.originalEvent.wheelDelta /120 > 0) {
+              App.setId('cover');
+              App.narrative();
+              console.log('scrolling up !');
+            }
+            else{
+              console.log('scrolling down !');
+            }
+          });
+        });
         
         callback();
       },
       preinit: function(callback) {
         var overlay = L.npmap.preset.baselayers.mapbox.pencil;
         NPMap.config.overlays = [ overlay ];
-        callback();
-      },
-      onAdd: function(callback){
-
-        debugger;
         callback();
       }
     },
