@@ -1,7 +1,5 @@
 h1 { line-height:0.5em; }
-p {
-  font-family:open-sans-regular,sans-serif
-  font-size: 13px;
+p {font-family:open-sans-regular,sans-seriffont-size: 13px;
 }
 article {
   position:absolute;
