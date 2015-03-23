@@ -39,9 +39,9 @@ var NPMap,
     }
   };
 
-NPMap = {
-  baseLayers: [{id: 'mapbox.pencil'}],
-  center: {lat: 42.714732, lng: -110.56},
+NPMap = { 
+  baseLayers: false, 
+  center: {lat: 42.714732, lng: -110.56}, 
   div: 'map',
   smallzoomControl: {
     position: 'topright'
@@ -80,15 +80,53 @@ NPMap = {
         App.to('work');
         callback();
       },
-      // preinit: function(callback) {
-      //   var overlay = L.npmap.preset.baselayers.mapbox.pencil;
-      //   NPMap.config.overlays = [ overlay ];
-      //   callback();
-      // }
+      preinit: function(callback) {
+        var overlay = L.npmap.preset.baselayers.mapbox.pencil;
+        NPMap.config.overlays = [ overlay ];
+
+        var map4 = L.npmap.map({ baseLayers: ['mapbox-light'], div: 'map',smallzoomControl: { position: 'topright'},
+          homeControl: {position: 'topright'},scrollWheelZoom: false});
+        colgate = L.marker([42.8269997, -75.5439682]).addTo(map4);
+        bonobo = L.marker([ 38.8903694, -77.0319595 ]).addTo(map4);
+
+        var college = new L.featureGroup([colgate, bonobo]);
+        map4.fitBounds(college.getBounds());
+
+        var map3 = L.npmap.map({ baseLayers: ['mapbox-highContrast'], div: 'map',smallzoomControl: { position: 'topright'},
+          homeControl: {position: 'topright'},scrollWheelZoom: false});
+        allhandsHaiti = L.marker([39.73351, -104.99259 ]).addTo(map3);
+        allhandsPh = L.marker( [ 18.510800, -72.633900]).addTo(map3);
+
+        var hands = new L.featureGroup([allhandsHaiti, allhandsPh]);
+        map3.fitBounds(hands.getBounds());
+
+
+        var map2 = L.npmap.map({ baseLayers: ['bing-aerial'], div: 'map',smallzoomControl: { position: 'topright'},
+          homeControl: {position: 'topright'},scrollWheelZoom: false});
+        hot = L.marker([-6.4714902, 106.8275223]).addTo(map2);
+        earthline = L.marker([ -6.1714902, 106.8275223]).addTo(map2);
+
+        var indo = new L.featureGroup([hot, earthline]);
+        map2.fitBounds(indo.getBounds());
+
+        var map = L.npmap.map({ baseLayers: ['mapbox-outdoors'], div: 'map',smallzoomControl: { position: 'topright'},
+          homeControl: {position: 'topright'},scrollWheelZoom: false});
+        nps = L.marker([39.73351, -104.99259 ]).addTo(map);
+        nps.bindPopup('gschool');
+        gschool = L.marker([ 39.704709, -105.081373 ]).addTo(map);
+        gschool.bindPopup('gschool');
+
+        var colorado = new L.featureGroup([nps, gschool]);
+        map.fitBounds(colorado.getBounds());
+        
+        
+        callback();
+      }
     },
     scrollWheelZoom: false,
     minZoom: 2,
-    maxZoom: 10
+    maxZoom: 10,
+    zoom: 2
   };
   (function() {
   var s = document.createElement('script');
@@ -98,78 +136,78 @@ NPMap = {
 
 
 $(document).on('ready', function(){
-var places = { type: 'FeatureCollection', features: [
-  {'geometry': {'type': 'Point', 'coordinates': [-71.8000, 42.3000] },
-    'properties': { 'id': 'cover', 'zoom': 3 }, type: 'Feature' },
-  {'geometry': {'type': 'Point', 'coordinates': [ -104.99259, 39.73351 ] },
-    'properties': { 'id': 'nps', 'zoom': 6 }, type: 'Feature' },
-  {'geometry': {'type': 'Point', 'coordinates': [ -104.99259, 39.73351 ] },
-    'properties': { 'id': 'gschool', 'zoom': 6 }, type: 'Feature' },
-  {'geometry': {'type': 'Point', 'coordinates': [ 106.8275223, -6.4714902 ] },
-    'properties': { 'id': 'earthline' }, type: 'Feature' },
-  {'geometry': {'type': 'Point', 'coordinates': [ 106.8275223, -6.1714902] },
-    'properties': { 'id': 'hot', 'zoom': 4 }, type: 'Feature' },
-  {'geometry': {'type': 'Point', 'coordinates': [ 121.803894, 11.1126661] },
-    'properties': { 'id': 'allhands' }, type: 'Feature' },
-  {'geometry': {'type': 'Point', 'coordinates': [-77.0319595 , 38.8903694 ] },
-     'properties': { 'id': 'bonobo' }, type: 'Feature' },
-  {'geometry': {'type': 'Point', 'coordinates': [-75.5439682, 42.8269997 ] },
-    'properties': { 'id': 'colgate' }, type: 'Feature' }
-]};
+// var places = { type: 'FeatureCollection', features: [
+//   {'geometry': {'type': 'Point', 'coordinates': [42.3000, -71.8000] },
+//     'properties': { 'id': 'cover', 'zoom': 3 }, type: 'Feature' },
+//   {'geometry': {'type': 'Point', 'coordinates': [ 39.73351, -104.99259 ] },
+//     'properties': { 'id': 'nps', 'zoom': 6 }, type: 'Feature' },
+//   {'geometry': {'type': 'Point', 'coordinates': [ 39.73351, -104.99259] },
+//     'properties': { 'id': 'gschool', 'zoom': 6 }, type: 'Feature' },
+//   {'geometry': {'type': 'Point', 'coordinates': [  -6.4714902, 106.8275223] },
+//     'properties': { 'id': 'earthline' }, type: 'Feature' },
+//   {'geometry': {'type': 'Point', 'coordinates': [ -6.1714902, 106.8275223 ] },
+//     'properties': { 'id': 'hot', 'zoom': 4 }, type: 'Feature' },
+//   {'geometry': {'type': 'Point', 'coordinates': [ 11.1126661, 121.803894] },
+//     'properties': { 'id': 'allhands' }, type: 'Feature' },
+//   {'geometry': {'type': 'Point', 'coordinates': [ 38.8903694, -77.0319595 ] },
+//      'properties': { 'id': 'bonobo' }, type: 'Feature' },
+//   {'geometry': {'type': 'Point', 'coordinates': [42.8269997, -75.5439682] },
+//     'properties': { 'id': 'colgate' }, type: 'Feature' }
+// ]};
 
-  var placesLayer = new L.FeatureGroup();
-  L.npmap.layer.geojson({
-    data: places
-  }),
-  narrative = document.getElementById('narrative'),
-  sections = narrative.getElementsByTagName('section'),
-  currentId = '';
+// var narrative = document.getElementById('narrative'),
+//   sections = narrative.getElementsByTagName('section'),
+//   currentId = '';
+  
+// placesLayer = new L.FeatureGroup([]);
+//   L.npmap.layer.geojson({
+//     data: places
+//   }),
+  // placeLayer.addTo(map);
+  // setId('cover');
 
-placeLayer.addTo(map);
-setId('cover');
+  // function setId(newId) {
+  //     // If the ID hasn't actually changed, don't do anything
+  //     if (newId === currentId) return;
+  //     // Otherwise, iterate through layers, setting the current
+  //     // marker to a different color and zooming to it.
+  //     placesLayer.eachLayer(function(layer) {
+  //         if (layer.feature.properties.id === newId) {
+  //             map.setView(layer.getLatLng(), layer.feature.properties.zoom || 14);
+  //             layer.setIcon(L.mapbox.marker.icon({
+  //                 'marker-color': '#a8f'
+  //             }));
+  //         } else {
+  //             layer.setIcon(L.mapbox.marker.icon({
+  //                 'marker-color': '#404040'
+  //             }));
+  //         }
+  //     });
+  //     // highlight the current section
+  //     for (var i = 0; i < sections.length; i++) {
+  //         sections[i].className = sections[i].id === newId ? 'active' : '';
+  //     }
+  //     // And then set the new id as the current one,
+  //     // so that we know to do nothing at the beginning
+  //     // of this function if it hasn't changed between calls
+  //     currentId = newId;
+  // }
 
-function setId(newId) {
-    // If the ID hasn't actually changed, don't do anything
-    if (newId === currentId) return;
-    // Otherwise, iterate through layers, setting the current
-    // marker to a different color and zooming to it.
-    placesLayer.eachLayer(function(layer) {
-        if (layer.feature.properties.id === newId) {
-            map.setView(layer.getLatLng(), layer.feature.properties.zoom || 14);
-            layer.setIcon(L.mapbox.marker.icon({
-                'marker-color': '#a8f'
-            }));
-        } else {
-            layer.setIcon(L.mapbox.marker.icon({
-                'marker-color': '#404040'
-            }));
-        }
-    });
-    // highlight the current section
-    for (var i = 0; i < sections.length; i++) {
-        sections[i].className = sections[i].id === newId ? 'active' : '';
-    }
-    // And then set the new id as the current one,
-    // so that we know to do nothing at the beginning
-    // of this function if it hasn't changed between calls
-    currentId = newId;
-}
-
-// If you were to do this for real, you would want to use
-// something like underscore's _.debounce function to prevent this
-// call from firing constantly.
-narrative.onscroll = function(e) {
-  console.log('scrolling');
-  var narrativeHeight = narrative.offsetHeight;
-  var newId = currentId;
-  // Find the section that's currently scrolled-to.
-  // We iterate backwards here so that we find the topmost one.
-  for (var i = sections.length - 1; i >= 0; i--) {
-      var rect = sections[i].getBoundingClientRect();
-      if (rect.top >= 0 && rect.top <= narrativeHeight) {
-          newId = sections[i].id;
-      }
-  };
-  setId(newId);
-};
+  // // If you were to do this for real, you would want to use
+  // // something like underscore's _.debounce function to prevent this
+  // // call from firing constantly.
+  // narrative.onscroll = function(e) {
+  //   console.log('scrolling');
+  //   var narrativeHeight = narrative.offsetHeight;
+  //   var newId = currentId;
+  //   // Find the section that's currently scrolled-to.
+  //   // We iterate backwards here so that we find the topmost one.
+  //   for (var i = sections.length - 1; i >= 0; i--) {
+  //       var rect = sections[i].getBoundingClientRect();
+  //       if (rect.top >= 0 && rect.top <= narrativeHeight) {
+  //           newId = sections[i].id;
+  //       }
+  //   };
+  //   setId(newId);
+  // };
 })
