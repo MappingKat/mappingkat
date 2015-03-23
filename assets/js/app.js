@@ -39,8 +39,8 @@ var NPMap,
     }
   };
 
-NPMap = { 
-  baseLayers: false, 
+NPMap = {
+  baseLayers: false,
   center: {lat: 42.714732, lng: -110.56}, 
   div: 'map',
   smallzoomControl: {
@@ -48,6 +48,19 @@ NPMap = {
   },
   homeControl: {
     position: 'topright'
+  },
+  legendControl: {
+    position: 'topleft',
+    html: '<section id="cover" class="cover active"><img src= "assets/img/kat.png" class="katrina"/>'+
+            '<h1 class="katrina">About</h1>'+
+            '<ul><div id="social">'+
+                '<li class="tada animated"><a href="mailto:katrina@engelsted.co"><img src="assets/img/gmail.png" alt="email"></a></li>'+
+                '<li class="tada animated"><a href="www.linkedin.com/pub/katrina-engelsted/22/bb1/3b2/" target="_blank"><img src="assets/img/linkedin.png" alt="linkedin"></a></li>'+
+                '<li class="tada animated"><a href="http://twitter.com/mappingkat/" target="_blank"><img src="assets/img/twitter.png" alt="twitter"></a></li>'+
+                '<li class="tada animated"><a href="http://github.com/MappingKat/" target="_blank"><img src="assets/img/github.png" alt="github"></a></li>'+
+            '</div></ul>'+
+          '<p class="cover-para">With a background in <strong>geography</strong> and <strong>Asian studies</strong>, Katrina enjoys creating maps, collecting data, and spreading geographical knowledge. Currently, she works with the <strong>National Park Service</strong> to design and create interactive web maps. <br> From navigating with topographic maps in the mountains of Colorado to analyzing oil palm plantation imagery around Southeast Asia to teaching the Indonesian provincial government how to collect spatial data, Katrina has worked on a range of geospatial projects. Katrina aims to make the world more geograpically and map literate. She lives for making the world a <strong>mappier</strong> place.</p>'+
+          '</section>'
   },
   hooks: {
     init: function(callback) {
@@ -84,32 +97,98 @@ NPMap = {
         var overlay = L.npmap.preset.baselayers.mapbox.pencil;
         NPMap.config.overlays = [ overlay ];
 
-        var map4 = L.npmap.map({ baseLayers: ['mapbox-light'], div: 'map',smallzoomControl: { position: 'topright'},
-          homeControl: {position: 'topright'},scrollWheelZoom: false});
+        var map4 = L.npmap.map({ 
+          baseLayers: ['mapbox-light'], 
+          div: 'map',
+          homeControl: {position: 'topright'},
+          legendControl: {position: 'topleft', html: ''+
+          '<section id="bonobo">'+
+          '<h3>GIS Coordinator @Bonobo Conservation Initiative (Nov 2011 - Feb 2012)</h3>'+
+          '<p>‣ Gathered and compiled research data from biodiversity and forest surveys<br> ‣ Created interactive online map using Javascript, CartoCSS, and HTML (http://www.bonobo.org/peace-forest-map/)<br> ‣ Organized past folders and datasets so that workflow was quicker and more efficient<br> BCI is a NGO that aims to protect the bonobos, preserve their tropical rainforest habitat and empower local communities in the Congo Basin. </p>'+
+          '</section>'+
+          '<section id="colgate">'+
+          '<h3>Outdoor Educator @Colgate University (Sept 2007 - May 2011)</h3>'+
+          '<p>Taught peers, teachers and community members in the community various outdoor skills, such as survival, kayaking, camping, skiing, rock climbing, etc.  Learned how to conduct proper lessons and teach in different styles in order to appeal to a variety of learning types.</p>'+
+          '</section>'
+          },
+          smallzoomControl: { position: 'topright'},
+          scrollWheelZoom: false
+        });
         colgate = L.marker([42.8269997, -75.5439682]).addTo(map4);
         bonobo = L.marker([ 38.8903694, -77.0319595 ]).addTo(map4);
 
         var college = new L.featureGroup([colgate, bonobo]);
         map4.fitBounds(college.getBounds());
 
-        var map3 = L.npmap.map({ baseLayers: ['mapbox-highContrast'], div: 'map',smallzoomControl: { position: 'topright'},
-          homeControl: {position: 'topright'},scrollWheelZoom: false});
+        var map3 = L.npmap.map({ 
+          baseLayers: ['mapbox-highContrast'], 
+          div: 'map',
+          legendControl: {position: 'topleft', html: ''+
+          '<section id="allhands">'+
+          '<h3>Base Manager @All Hands (June 2011 to Feb 2012)</h3>'+
+          '<p>Volunteered on two projects:  one in Leogane, Haiti and the other in Cagayan de Oro, Mindanoa, Philippines. ‣ Managed 30+ volunteers at base and at work site <br> ‣ Organized travel,transportation, accommodation, food and work schedule for over 40 volunteers<br> ‣ Represented All Hands at conferences on disaster response, prevention and management<br> ‣ Organized excel charts and edited Google Earth maps/ KMLfiles layers for the water sanitation, rubble and demolition sites <br> ‣ Built schools, demolished unsafe structures, and cleared house foundations that had been damaged by the 2010 earthquake. All Hands is a disaster response organization that sends volunteers from all over the world to aid victims after natural disasters.</p>'+
+          '</section>'
+        },
+          smallzoomControl: { position: 'topright'},
+          homeControl: {position: 'topright'},
+          scrollWheelZoom: false});
         allhandsHaiti = L.marker([18.510800,-72.633900 ]).addTo(map3);
         allhandsPh = L.marker( [8.454236, 124.631898]).addTo(map3);
 
         var hands = new L.featureGroup([allhandsHaiti, allhandsPh]);
         map3.fitBounds(hands.getBounds());
 
-        var map2 = L.npmap.map({ baseLayers: ['bing-aerial'], div: 'map',smallzoomControl: { position: 'topright'},
-          homeControl: {position: 'topright'},scrollWheelZoom: false});
+        var map2 = L.npmap.map({ 
+          baseLayers: ['bing-aerial'], 
+          div: 'map',
+          homeControl: {position: 'topright'},
+          legendControl: {position: 'topleft', html: ''+
+            '<section id="earthline">'+
+          '<h3>Production Manager @Earthline (Jan 2013 to Sept 2013)</h3>'+
+          '<p>‣ Wrote 30 page project reports so that customers could understand satellite imagery aquisition, mapping processes, and classification schemes for their estates'+
+          '<br>‣ Managed imagery, mapping, surveying and printshop departments (over 30 staff) and around ten projects at a time'+
+          '<br>‣ Coordinated with customers when problems arose or clarification was needed'+
+          '<br>‣ Worked with VTiger to organize leads, customers and sales'+
+          '<br>‣ Hired mapping managers, supervisors and editors; remote sensing operators; surveyors Constructed excel project database with basic macros to overview and track projects more effectively'+
+          '<br>PT Earthline is an Indonesian mapping company that works with various clients, such as WWF, ExxonMobil, Chevron, Wilmar, Genting Holdings, etc, to map oil palm plantations, mining concessions and green fields in Indonesia, Malaysia, and parts of Africa.</p>'+
+          '</section>'+
+          '<section id="hot">'+
+          '<h3>Technical Writer @Humanitarian OpenStreetMap Team (July to December 2013)</h3>'+
+          '<p>Various parts of Indonesia'+
+          '<br>‣ Edited and created chapters for OpenStreetMap learning and teaching tutorials (www.learnosm.org)<br>‣ Used Google Drive, Github and Jekyll/Hyde to share and edit chapters<br>‣ Edited and wrote workshops and project updates on www.openstreetmap.or.id<br>‣ Attended workshops throughtout Indonesia to teach OSM tools, such as PostGIS, PostgreSQL, and QGIS plugins</p><p>Humanitarian OpenStreetMap Team is an NGO set up to collect, map and teach OSM tools. This Indonesia project was funded by AusAID, World Bank, IOM and the Indonesian government to map critical infrastructure and create better contingency plans using the InaSafe plugin.</p>'+
+          '</section>'},
+          smallzoomControl: { position: 'topright'},
+          scrollWheelZoom: false
+        });
         hot = L.marker([-6.4714902, 106.8275223]).addTo(map2);
         earthline = L.marker([ -6.1714902, 106.8275223]).addTo(map2);
 
         var indo = new L.featureGroup([hot, earthline]);
         map2.fitBounds(indo.getBounds());
 
-        var map = L.npmap.map({ baseLayers: ['mapbox-outdoors'], div: 'map',smallzoomControl: { position: 'topright'},
-          homeControl: {position: 'topright'},scrollWheelZoom: false});
+        var map = L.npmap.map({ 
+          baseLayers: ['mapbox-outdoors'], 
+          div: 'map',
+          homeControl: {position: 'topright'},
+          legendControl: {position: 'topleft', html: ''+
+          '<section id="nps">'+
+          '<h3>Web Developer @NPMap: National Park Service (March 2014 to present)</h3>'+
+          '<p>Katrina is working with the small NPMap team to help develop and design engaging maps for the National Park Service.  Her job also entails working with the OpenStreetMap community to get more people excited about mapping the parks.  The team focuses on three main projects that will enable the public and National Park employees to get more accurate and current geospatial data.  The NPBuilder, Places and <a href="http://www.nps.gov/npmap/park-tiles/">Park Tiles</a> all aim to create easier open source maps. Check out some of the work at <a href="http://www.nps.gov/npmap/">www.nps.gov</a>.</p>'+
+          '</section>'+
+          '<section id="gschool">'+
+          '<h3>Student @gschool (Sept 2013 to Feb 2014)</h3>'+
+          '<p>This intensive six-month web development program covered the ins-and-outs of Ruby on Rails and Javascript coding. With Jeff Casimir, Katrina Owen, Franklin Webber, and Jorge as instructors, 25 students worked on various projects to hone in their team work and programming skills.  Projects ranged in focus from'+
+            '<br> ‣ Practice using Sinatra and Rails'+
+            '<br> ‣ Test Driven Development(Rspec, Minitest, Capybara)'+
+            '<br> ‣ Multi-tendancy'+
+            '<br> ‣ API integration'+
+            '<br>We worked on group projects, as well as indiviual ones, which can all be found at <a href="http://github.com/MappingKat" target="_blank">www.github.com/MappingKat</a></p>'+
+          '</section>'
+          },
+          smallzoomControl: { position: 'topright'},
+          scrollWheelZoom: false
+        });
+
         nps = L.marker([39.73351, -104.99259 ]).addTo(map);
         nps.bindPopup('gschool');
         gschool = L.marker([ 39.704709, -105.081373 ]).addTo(map);
