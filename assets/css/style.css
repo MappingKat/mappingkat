@@ -130,15 +130,18 @@ h1.katrina{
     text-shadow:none;
     margin-left:0px;
     padding:30px;
+    height:895px;
     }
   section.active {
     position:fixed;
     top:0px; left:0px; right:0px;
+    min-height:895px !important;
     }
 
-  #pane { width:100%; 
-  }
+/*  #pane { width:100%; 
+  }*/
 
+ 
   #map  {
     bottom:0%;
     left:0%;

@@ -94,12 +94,11 @@ NPMap = {
 
         var map3 = L.npmap.map({ baseLayers: ['mapbox-highContrast'], div: 'map',smallzoomControl: { position: 'topright'},
           homeControl: {position: 'topright'},scrollWheelZoom: false});
-        allhandsHaiti = L.marker([39.73351, -104.99259 ]).addTo(map3);
-        allhandsPh = L.marker( [ 18.510800, -72.633900]).addTo(map3);
+        allhandsHaiti = L.marker([18.510800,-72.633900 ]).addTo(map3);
+        allhandsPh = L.marker( [8.454236, 124.631898]).addTo(map3);
 
         var hands = new L.featureGroup([allhandsHaiti, allhandsPh]);
         map3.fitBounds(hands.getBounds());
-
 
         var map2 = L.npmap.map({ baseLayers: ['bing-aerial'], div: 'map',smallzoomControl: { position: 'topright'},
           homeControl: {position: 'topright'},scrollWheelZoom: false});
@@ -118,7 +117,6 @@ NPMap = {
 
         var colorado = new L.featureGroup([nps, gschool]);
         map.fitBounds(colorado.getBounds());
-        
         
         callback();
       }
@@ -155,59 +153,53 @@ $(document).on('ready', function(){
 //     'properties': { 'id': 'colgate' }, type: 'Feature' }
 // ]};
 
-// var narrative = document.getElementById('narrative'),
-//   sections = narrative.getElementsByTagName('section'),
-//   currentId = '';
+var narrative = document.getElementById('narrative'),
+  sections = narrative.getElementsByTagName('section'),
+  currentId = '';
   
-// placesLayer = new L.FeatureGroup([]);
-//   L.npmap.layer.geojson({
-//     data: places
-//   }),
-  // placeLayer.addTo(map);
-  // setId('cover');
+  setId('cover');
 
-  // function setId(newId) {
-  //     // If the ID hasn't actually changed, don't do anything
-  //     if (newId === currentId) return;
-  //     // Otherwise, iterate through layers, setting the current
-  //     // marker to a different color and zooming to it.
-  //     placesLayer.eachLayer(function(layer) {
-  //         if (layer.feature.properties.id === newId) {
-  //             map.setView(layer.getLatLng(), layer.feature.properties.zoom || 14);
-  //             layer.setIcon(L.mapbox.marker.icon({
-  //                 'marker-color': '#a8f'
-  //             }));
-  //         } else {
-  //             layer.setIcon(L.mapbox.marker.icon({
-  //                 'marker-color': '#404040'
-  //             }));
-  //         }
-  //     });
-  //     // highlight the current section
-  //     for (var i = 0; i < sections.length; i++) {
-  //         sections[i].className = sections[i].id === newId ? 'active' : '';
-  //     }
-  //     // And then set the new id as the current one,
-  //     // so that we know to do nothing at the beginning
-  //     // of this function if it hasn't changed between calls
-  //     currentId = newId;
-  // }
+  function setId(newId) {
+      // If the ID hasn't actually changed, don't do anything
+      if (newId === currentId) return;
+      // Otherwise, iterate through layers, setting the current
+      // marker to a different color and zooming to it.
+      // placesLayer.eachLayer(function(layer) {
+      //     if (layer.feature.properties.id === newId) {
+      //         map.setView(layer.getLatLng(), layer.feature.properties.zoom || 14);
+      //         layer.setIcon(L.mapbox.marker.icon({
+      //             'marker-color': '#a8f'
+      //         }));
+      //     } else {
+      //         layer.setIcon(L.mapbox.marker.icon({
+      //             'marker-color': '#404040'
+      //         }));
+      //     }
+      // });
+      // highlight the current section
+      for (var i = 0; i < sections.length; i++) {
+          sections[i].className = sections[i].id === newId ? 'active' : '';
+      }
+      // And then set the new id as the current one,
+      // so that we know to do nothing at the beginning
+      // of this function if it hasn't changed between calls
+      currentId = newId;
+  }
 
-  // // If you were to do this for real, you would want to use
-  // // something like underscore's _.debounce function to prevent this
-  // // call from firing constantly.
-  // narrative.onscroll = function(e) {
-  //   console.log('scrolling');
-  //   var narrativeHeight = narrative.offsetHeight;
-  //   var newId = currentId;
-  //   // Find the section that's currently scrolled-to.
-  //   // We iterate backwards here so that we find the topmost one.
-  //   for (var i = sections.length - 1; i >= 0; i--) {
-  //       var rect = sections[i].getBoundingClientRect();
-  //       if (rect.top >= 0 && rect.top <= narrativeHeight) {
-  //           newId = sections[i].id;
-  //       }
-  //   };
-  //   setId(newId);
-  // };
+  // If you were to do this for real, you would want to use
+  // something like underscore's _.debounce function to prevent this
+  // call from firing constantly.
+  narrative.onscroll = function(e) {
+    var narrativeHeight = narrative.offsetHeight;
+    var newId = currentId;
+    // Find the section that's currently scrolled-to.
+    // We iterate backwards here so that we find the topmost one.
+    for (var i = sections.length - 1; i >= 0; i--) {
+        var rect = sections[i].getBoundingClientRect();
+        if (rect.top >= 0 && rect.top <= narrativeHeight) {
+            newId = sections[i].id;
+        }
+    };
+    setId(newId);
+  };
 })
