@@ -1,13 +1,13 @@
 @font-face {
-  font-family: GraublauWeb;
+  font-family: Quicksand;
   src: url('http://mappingkat.github.io/me/assets/fonts/quicksand/Quicksand-Regular.odf') format('opentype');
 }
 @font-face {
-font-family: GraublauWeb;
-src: url('http://mappingkat.github.io/me/assets/fonts/sinkin-sans/SinkinSans-500Medium.odt') format('opentype');
+  font-family: SinkinSans;
+  src: url('http://mappingkat.github.io/me/assets/fonts/sinkin-sans/SinkinSans-500Medium.odt') format('opentype');
 }
 h1 { line-height:0.5em; }
-p {font-family:Quicksand-Regular; font-size: 13px;
+p { font-family: Quicksand, SinkinSans;font-size: 14px;
 }
 article {
   position:absolute;
