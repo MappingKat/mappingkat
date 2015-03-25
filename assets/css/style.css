@@ -1,5 +1,13 @@
+@font-face {
+  font-family: GraublauWeb;
+  src: url('http://mappingkat.github.io/me/assets/fonts/quicksand/Quicksand-Regular.odf') format('opentype');
+}
+@font-face {
+font-family: GraublauWeb;
+src: url('http://mappingkat.github.io/me/assets/fonts/sinkin-sans/SinkinSans-500Medium.odt') format('opentype');
+}
 h1 { line-height:0.5em; }
-p {font-family:open-sans-regular,sans-seriffont-size: 13px;
+p {font-family:Quicksand-Regular; font-size: 13px;
 }
 article {
   position:absolute;
@@ -9,7 +17,6 @@ article {
   left:0;
   width:32px;
   height: 120px;
-  /*overflow:auto;*/
 }
 section {
   background:rgba(255,255,255,0.5);
@@ -130,21 +137,14 @@ h1.katrina{
     text-shadow:none;
     margin-left:0px;
     padding:30px;
-    height:895px;
-     /*min-height:400px !important;*/
     }
   section.active {
     position:fixed;
     top:0px; 
     left:0px; 
-    right:0px;
-   
+    right:0px;   
     }
 
-/*  #pane { width:100%; 
-  }*/
-
- 
   #map  {
     bottom:0%;
     left:0%;
