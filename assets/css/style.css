@@ -15,8 +15,8 @@ section {
   width:320px;
   padding:20px;
   color:rgba(0,0,0,0.5);
-  transition:background 300ms, color 300ms;
-  -webkit-transition:background 300ms, color 300ms;
+  transition:background 700ms, color 700ms;
+  -webkit-transition:background 700ms, color 700ms;
 }
 section.active {
   background:rgba(0,0,0,0.5);
