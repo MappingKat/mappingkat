@@ -3,17 +3,14 @@ p { font-family: 'Questrial';
   font-size: 16px;
 }
 article {
- position: absolute;
-  top: 120px;
+  top: 10%;
   right:0;
-  bottom:0px;
+  bottom:0;
   left:0;
   width:32px;
   height: 120px;
 }
 section {
-  position: absolute;
-  top: 120px;
   background:rgba(255,255,255,0.5);
   width:320px;
   padding:20px;
@@ -22,8 +19,6 @@ section {
   -webkit-transition:background 300ms, color 300ms;
 }
 section.active {
-  position: absolute;
-  top: 30em;
   background:rgba(0,0,0,0.5);
   color:#fff;
 }
