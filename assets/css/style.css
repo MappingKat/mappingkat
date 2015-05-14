@@ -1,5 +1,6 @@
 h1 { line-height:0.5em; }
 p {font-family:open-sans-regular,sans-seriffont-size: 13px;}
+
 article {
   position:absolute;
   top:0;
@@ -21,7 +22,9 @@ section {
 section.active {
   background:rgba(0,0,0,0.5);
   color:#fff;
+  width: 500px;
 }
+section.active h3, section.active h3 {color:#000;}
 .npmap .leaflet-container h1 {
   font-size: 30px !important;
 }
@@ -145,10 +148,3 @@ h1.katrina{
     height: 100%;
     }
   }
-
-/*@media (min-width:1280px) {
-  body {
-    font-size:18px;
-    line-height:24px;
-    }
-  }*/
