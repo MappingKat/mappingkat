@@ -89,6 +89,15 @@ NPMap = {
         callback();
       },
       preinit: function(callback) {
+        var rainbowIcon = L.icon({
+            iconUrl: '/assets/img/icon.png',
+            // shadowUrl: '/assets/img/leaf-shadow.png',
+            iconSize:     [30, 30], 
+            shadowSize:   [30, 30],
+            iconAnchor:   [0, 0],
+            // shadowAnchor: [4, 62], 
+            popupAnchor:  [-3, -76]
+        });
         var overlay = L.npmap.preset.baselayers.mapbox.pencil;
         NPMap.config.overlays = [ overlay ];
 
@@ -109,8 +118,8 @@ NPMap = {
           smallzoomControl: { position: 'topright'},
           scrollWheelZoom: false
         });
-        colgate = L.marker([42.8269997, -75.5439682]).addTo(map4);
-        bonobo = L.marker([ 38.8903694, -77.0319595 ]).addTo(map4);
+        colgate = L.marker([42.8269997, -75.5439682],{icon: rainbowIcon}).addTo(map4);
+        bonobo = L.marker([ 38.8903694, -77.0319595 ],{icon: rainbowIcon}).addTo(map4);
 
         var college = new L.featureGroup([colgate, bonobo]);
         map4.fitBounds(college.getBounds());
@@ -127,8 +136,8 @@ NPMap = {
           smallzoomControl: { position: 'topright'},
           homeControl: {position: 'topright'},
           scrollWheelZoom: false});
-        allhandsHaiti = L.marker([18.510800,-72.633900 ]).addTo(map3);
-        allhandsPh = L.marker( [8.454236, 124.631898]).addTo(map3);
+        allhandsHaiti = L.marker([18.510800,-72.633900 ],{icon: rainbowIcon}).addTo(map3);
+        allhandsPh = L.marker( [8.454236, 124.631898],{icon: rainbowIcon}).addTo(map3);
 
         var hands = new L.featureGroup([allhandsHaiti, allhandsPh]);
         map3.fitBounds(hands.getBounds());
@@ -155,8 +164,8 @@ NPMap = {
           smallzoomControl: { position: 'topright'},
           scrollWheelZoom: false
         });
-        hot = L.marker([-6.4714902, 106.8275223]).addTo(map2);
-        earthline = L.marker([ -6.1714902, 106.8275223]).addTo(map2);
+        hot = L.marker([-6.4714902, 106.8275223],{icon: rainbowIcon}).addTo(map2);
+        earthline = L.marker([ -6.1714902, 106.8275223],{icon: rainbowIcon}).addTo(map2);
 
         var indo = new L.featureGroup([hot, earthline]);
         map2.fitBounds(indo.getBounds());
@@ -184,9 +193,9 @@ NPMap = {
           scrollWheelZoom: false
         });
 
-        nps = L.marker([39.73351, -104.99259 ]).addTo(map);
+        nps = L.marker([39.73351, -104.99259],{icon: rainbowIcon}).addTo(map);
         nps.bindPopup('gschool');
-        gschool = L.marker([ 39.704709, -105.081373 ]).addTo(map);
+        gschool = L.marker([ 39.704709, -105.081373 ],{icon: rainbowIcon}).addTo(map);
         gschool.bindPopup('gschool');
 
         var colorado = new L.featureGroup([nps, gschool]);
@@ -206,7 +215,6 @@ NPMap = {
   document.body.appendChild(s);
 })();
 
-debugger;
 var sections = document.getElementsByTagName('section'),
   currentId = '';
   
