@@ -12,8 +12,9 @@ h1 {
   font-size: 5em;
   text-shadow: 0 1px 0 #0a1d2d,0 5px 0 #0a1d2d,0 6px 0 yellow;
   position: absolute;
-  z-index: -1;http://localhost:1888/
+  z-index: 10;
   line-height: 0;
+
 }
 span {
   text-align: left;
@@ -24,7 +25,7 @@ span {
   font-weight: 50px;
   font-size: 0.5em;
   text-shadow: 0 1px 0 #fff,0 3px 0 #fff,0 4px 0 yellow;
-  line-height: 0px;
+  line-height: 60px;
   position: absolute;
 }
 .sun {
@@ -434,9 +435,9 @@ span {
 }
 
 /*===============================*/
-nav{list-style: none;margin:20px 10px;}
-li{margin: 0px 5%;}
-#social{display: -webkit-box;}
+ul{list-style: none;margin:20px 10px;}
+li{float: left;margin: 0px 5%;}
+#social{display: inline;}
 .animated{padding-left:10px;}
 .animated:hover {-webkit-animation-duration: 1s;animation-duration: 1s;-webkit-animation-fill-mode: both;animation-fill-mode: both;}
 .tada {-webkit-animation-name: tada;animation-name: tada}
