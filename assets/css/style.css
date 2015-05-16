@@ -1,3 +1,25 @@
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  	h1{
+  		font-size: 1em;
+  	}
+  	.sun{
+  		width:20px;
+  	}
+  	.container{
+  		width:70px;
+  		height:100px;
+  	}
+  	li{
+  		margin:2px !important;
+  		width:20px;
+  	}
+}
+
+
+
 @font-face { font-family: "bello-pro"; src: url('http://mappingkat.com/assets/fonts/Bello Pro.otf'); } 
 body{font-family: "bello-pro",sans-serif;}
 *{box-sizing:border-box;}
@@ -86,7 +108,7 @@ span {
 	position:fixed;
 	margin:229px 112px;
 }
-.wheel1:before{	
+.wheel1:before, .wheel1::before{	
 	content:"";
 	position:fixed;
 	height:110px;
