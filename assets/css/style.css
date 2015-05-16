@@ -12,26 +12,38 @@
   		width:70px;
   		height:100px;
   	}
+  	ul{
+  		margin:5px;
+  	}
   	li{
   		margin:2px !important;
-  		width:20px;
+  	}
+  	img{
+  		width:40px;
+  	}
+  	div.bg{
+  		bottom:70px;
+  	}
+  	div.container{
+  		bottom: 30px;
+  	}
+  	div.pavement{
+  		height:70px;
   	}
 }
-
-
 
 @font-face { font-family: "bello-pro"; src: url('http://mappingkat.com/assets/fonts/Bello Pro.otf'); } 
 body{font-family: "bello-pro",sans-serif;}
 *{box-sizing:border-box;}
 h1 {
   text-align: left;
-  margin-top: 0.7em;
+  margin-top: 0.9em;
   margin-left: 35px;
   -webkit-transform: rotate(-10deg);
   color: #fff;
   font-style: normal;
   font-weight: 400px;
-  font-size: 5em;
+  font-size: 50px;
   text-shadow: 0 1px 0 #0a1d2d,0 5px 0 #0a1d2d,0 6px 0 yellow;
   position: absolute;
   z-index: 10;
@@ -460,7 +472,7 @@ span {
 ul{list-style: none;margin:20px 10px;}
 li{float: left;margin: 0px 5%;}
 #social{display: inline;}
-.animated{padding-left:10px;}
+.animated{padding-left:1%;}
 .animated:hover {-webkit-animation-duration: 1s;animation-duration: 1s;-webkit-animation-fill-mode: both;animation-fill-mode: both;}
 .tada {-webkit-animation-name: tada;animation-name: tada}
 /*the animation definition*/
