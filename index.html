@@ -20,10 +20,10 @@
 </head>
 <body>
 	<div class="bg">
-	<h1>Katrina E.<br/><span>Web Developer</span></h1>
-		<h2 class="construction">Gone Biking!</h2>
-	<div class="sun"></div>
-	<div class="cloud"></div>
+	  <h1>Katrina E.<br/><span>Web Developer</span></h1>
+	  <h1 class="biking"></h1>
+	  <div class="sun"></div>
+	  <div class="cloud"></div>
 		<a href="http://1.usa.gov/1duY2TI">
   		<div class="mountain">
 	    	<div class="mountain-top">
@@ -76,9 +76,9 @@
 <!--  <div class="project">Spatial Distributions of WWOOF hosts</div> -->
 	  	</div>
 	  </a>
-	    <div class="mountain-seven">
+	  <div class="mountain-seven">
   	</div>
-</div>
+  </div>
 	<div class="container">
 		<div class="bar1"></div>
 		<div class="bar2"></div>
@@ -101,29 +101,29 @@
   </div>
 	<script src='https://code.jquery.com/jquery-2.1.3.min.js'></script>
 	<script>
-	function browser_transform(transTarget, transValue){
-    $(transTarget).css('-ms-transform', 'rotate(' + transValue + 'deg)');
-    $(transTarget).css('-moz-transform', 'rotate(' + transValue + 'deg)');
-    $(transTarget).css('-webkit-transform', 'rotate(' + transValue + 'deg)');
-    $(transTarget).css('-o-transform', 'rotate(' + transValue + 'deg)');
-    $(transTarget).css('transform', 'rotate(' + transValue + 'deg)');
-	}
-	$(document).ready(function() {
-    var containerPos = $('#container').offset(),
-      scrollPos = $(window).scrollTop(),
-    	degreeRotate = 0;
-    $(document).scroll(function() {
-      var newScroll = $(window).scrollTop();
-      if (scrollPos > newScroll) {
-        degreeRotate -= 5;
-      } else {
-        degreeRotate += 5;
-      }
-     	scrollPos = newScroll;
+  	function browser_transform(transTarget, transValue){
+      $(transTarget).css('-ms-transform', 'rotate(' + transValue + 'deg)');
+      $(transTarget).css('-moz-transform', 'rotate(' + transValue + 'deg)');
+      $(transTarget).css('-webkit-transform', 'rotate(' + transValue + 'deg)');
+      $(transTarget).css('-o-transform', 'rotate(' + transValue + 'deg)');
+      $(transTarget).css('transform', 'rotate(' + transValue + 'deg)');
+  	}
+  	$(document).ready(function() {
+      var containerPos = $('#container').offset(),
+        scrollPos = $(window).scrollTop(),
+      	degreeRotate = 0;
+      $(document).scroll(function() {
+        var newScroll = $(window).scrollTop();
+        if (scrollPos > newScroll) {
+          degreeRotate -= 5;
+        } else {
+          degreeRotate += 5;
+        }
+       	scrollPos = newScroll;
 
-      browser_transform('.gear', degreeRotate);
-      browser_transform('.pedal', degreeRotate);
-    });
-	});
-</script>
+        browser_transform('.gear', degreeRotate);
+        browser_transform('.pedal', degreeRotate);
+      });
+  	});
+  </script>
 </body>
